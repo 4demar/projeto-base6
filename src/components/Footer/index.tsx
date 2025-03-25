@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleFooter } from '../../styles';
+import { StyleFooter } from '../../styles/layout';
 
 export function Footer() {
 

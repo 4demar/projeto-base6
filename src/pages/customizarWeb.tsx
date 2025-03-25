@@ -1,14 +1,15 @@
 import { useState } from "react";
+import { Container } from "../styles/layout";
 
 export default function CustomizarWeb() {
-   const [headerStyle, setHeaderStyle] = useState({ bg: "bg-blue-500", text: "text-white", border: "border-black" });
+   const [headerStyle, setHeaderStyle] = useState({ bg: "bg-blue-500", text: "black", border: "border-black" });
    const [inputStyle, setInputStyle] = useState({ bg: "bg-white", text: "text-black", border: "border-gray-400" });
    const [buttonStyle, setButtonStyle] = useState({ bg: "bg-green-500", text: "text-white", border: "border-green-700" });
    const [cardStyle, setCardStyle] = useState({ bg: "bg-gray-200", text: "text-black", border: "border-gray-500" });
    const [sidebarStyle, setSidebarStyle] = useState({ bg: "bg-gray-800", text: "text-white", border: "border-gray-900" });
 
    return (
-      <div className="flex h-screen">
+      <Container>
          {/* Sidebar */}
          <div className={`w-64 p-4 ${sidebarStyle.bg} ${sidebarStyle.text} ${sidebarStyle.border} border-r`}>
             <h2 className="text-xl font-bold mb-4">Sidebar</h2>
@@ -40,6 +41,6 @@ export default function CustomizarWeb() {
                </div>
             </div>
          </div>
-      </div>
+      </Container>
    );
 }

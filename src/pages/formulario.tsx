@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Container } from '../styles';
+import { Container } from '../styles/layout';
+
 
 export default function Formulario() {
    return (
