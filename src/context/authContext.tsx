@@ -18,6 +18,8 @@ export function AuthProvider({ children }: AuthProps) {
    const [isLoggedIn, setIsLoggedIn] = useState(false);
 
    const cadastro = (inputUsuario: string, inputSenha: string): boolean => {
+      if (!inputUsuario || !inputSenha) return false
+
       localStorage.setItem("@auth", JSON.stringify({
          usuario: inputUsuario,
          senha: inputSenha
@@ -27,6 +29,7 @@ export function AuthProvider({ children }: AuthProps) {
    };
 
    const login = (inputUsuario: string, inputSenha: string): boolean => {
+      if (!inputUsuario || !inputSenha) return false
       const acesso = localStorage.getItem("@auth");
       const cadastro = acesso !== null ? JSON.parse(acesso ?? '') : null
       if (cadastro !== null && inputUsuario === cadastro.usuario && inputSenha === cadastro.senha) {

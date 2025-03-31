@@ -2,8 +2,11 @@ import { useState } from 'react';
 import { Container } from '../styles/layout';
 import styled from 'styled-components';
 import { useAuth } from '../hook/useAuth';
+import { GoogleAuthProvider, signInWithPopup, User } from 'firebase/auth';
+import { auth } from '../components/services/firebase';
 
 export default function Login() {
+   const [user, setUser] = useState<User>({} as User);
    const { isLoggedIn, login, cadastro } = useAuth();
    const [username, setUsername] = useState('junior');
    const [password, setPassword] = useState('junior');
@@ -20,8 +23,22 @@ export default function Login() {
       const success = cadastro(username, password);
       if (!success)
          setMensagem('Falha ao efetuar cadastro, tente novamente.');
-
    };
+
+   function AutenticacaoGoogle() {
+      const provider = new GoogleAuthProvider();
+
+      signInWithPopup(auth, provider)
+         .then(async (result) => {
+            console.log(result.user);
+            cadastro(result.user.displayName ?? '', result.user.email ?? '')
+            setUser(result.user);
+
+         }).catch((error) => {
+            console.log(error);
+         });
+
+   }
 
    return (
       <Container>
@@ -62,6 +79,13 @@ export default function Login() {
                   <div className="col-2">
                      <Button onClick={handleCadastro}>Cadastro</Button>
                   </div>
+               </div>
+               <div className="row mt-3 d-flex justify-content-center">
+                  <h1>Acesse sua conta</h1>
+                  <div className="col-2">
+                     <Button onClick={AutenticacaoGoogle}>Autenticar conta google</Button>
+                  </div>
+
                </div>
                {mensagem && <p style={styles.error}>{mensagem}</p>}
                {/* </Container> */}
