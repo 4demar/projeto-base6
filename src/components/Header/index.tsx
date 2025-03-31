@@ -7,7 +7,7 @@ export function Header() {
    return (
       <>
          <StyleHeader>
-            <h2 className='texto'>Projeto Base 5</h2>
+            <h2 className='texto'>Projeto Base 6</h2>
          </StyleHeader>
          <ToastContainer
             position="top-right"
