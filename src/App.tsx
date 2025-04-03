@@ -4,6 +4,7 @@ import { AuthProvider } from './context/authContext';
 import { ThemeProviderCustom } from './context/themeContext';
 import { ToastContainer } from 'react-toastify';
 import { GlobalStyle } from './styles/stylesGlobal';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
    return (
