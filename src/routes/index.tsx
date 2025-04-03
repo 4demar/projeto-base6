@@ -9,11 +9,13 @@ import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import CustomizarWeb from "../pages/customizarWeb";
 import Formulario from "../pages/formulario";
+import { GaleriaMaliciosa } from "../pages/galeriaMaliciosa";
 
 const listaSidebar = ([
    { icone: FaHome, texto: "Principal", to: '/' },
    { icone: FaUserPlus, texto: 'Formulario', to: '/Formulario' },
-   { icone: FaAdjust, texto: 'Customizar Web', to: '/CustomizarWeb' }
+   { icone: FaAdjust, texto: 'Customizar Web', to: '/CustomizarWeb' },
+   { icone: FaAdjust, texto: 'Galeria Maliciosa', to: '/GaleriaMaliciosa' }
 ]);
 
 export function RoutesApp() {
@@ -33,6 +35,8 @@ export function RoutesApp() {
                   <Route path="/" element={<Login />} />
                   <Route path="/Formulario" element={<Formulario />} />
                   <Route path="/CustomizarWeb" element={<CustomizarWeb />} />
+                  <Route path="/GaleriaMaliciosa" element={<GaleriaMaliciosa />} />
+
                </Route>
 
                {/* Rota padrão */}
