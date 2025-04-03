@@ -21,8 +21,8 @@ const listaSidebar = ([
 export function RoutesApp() {
    return (
       <>
-         <Sidebar listSidebar={listaSidebar} />
-         <Header />
+
+         <Header listaSidebar={listaSidebar} />
          <Container>
             <Routes>
                {/* Rotas públicas */}

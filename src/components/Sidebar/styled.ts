@@ -14,12 +14,13 @@ interface statusProps {
 
 export const Container = styled.div<statusProps>`
     > svg { //Imagem Menu
-        position: absolute;
+        //position: absolute;
         color: white;
         width: 26px;
         height: 26px;
-        margin-top: 22px;
-        margin-left: 22px;
+        
+        /* margin-top: 22px;
+        margin-left: 22px; */
         cursor: pointer;
     }
       

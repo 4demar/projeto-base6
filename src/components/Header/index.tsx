@@ -3,10 +3,12 @@ import { ToastContainer } from "react-toastify";
 import { StyleHeader } from '../../styles/layout';
 import { HeaderContainer, Logo, LogoIcon, Nav } from './styles';
 import { FaPlay } from 'react-icons/fa';
+import { Sidebar, SidebarType } from '../Sidebar';
 
-export function Header() {
+export function Header({ listaSidebar }: { listaSidebar: SidebarType[] }) {
    return (
       <HeaderContainer>
+         <Sidebar listSidebar={listaSidebar} />
          <Logo>
             <LogoIcon>
                <FaPlay size={20} />
